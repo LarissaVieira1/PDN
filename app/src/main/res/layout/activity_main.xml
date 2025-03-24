@@ -7,24 +7,69 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
+    <Button
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/ola"
+        android:text="Calcular"
+        android:textColor="#2D9DCF"
+        android:textColorLink="#4D82AC"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button"
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/Click"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="@id/textView"
-        app:layout_constraintTop_toBottomOf="@id/textView"
-        tools:layout_editor_absoluteY="461dp" />
+        android:text="Altura"
+        app:layout_constraintStart_toStartOf="@+id/txtPeso"
+        tools:layout_editor_absoluteY="178dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Peso"
+        app:layout_constraintStart_toStartOf="@+id/txtAltura"
+        tools:layout_editor_absoluteY="178dp" />
+
+    <TextView
+        android:id="@+id/txtResultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="--"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <EditText
+        android:id="@+id/txtAltura"
+        android:layout_width="146dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:hint=" 45 kg"
+        android:inputType="number"
+        app:layout_constraintEnd_toStartOf="@+id/txtPeso"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="218dp" />
+
+    <EditText
+        android:id="@+id/txtPeso"
+        android:layout_width="146dp"
+        android:layout_height="52dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="168 cm"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/txtAltura"
+        tools:layout_editor_absoluteY="218dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
