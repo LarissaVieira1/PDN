@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.ifsc.contaclique"
+    namespace = "com.ifsc.contaclick"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.ifsc.contaclique"
+        applicationId = "com.ifsc.contaclick"
         minSdk = 26
         targetSdk = 34
         versionCode = 1

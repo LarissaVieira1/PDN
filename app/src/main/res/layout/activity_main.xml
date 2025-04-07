@@ -11,65 +11,69 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Calcular"
-        android:textColor="#2D9DCF"
-        android:textColorLink="#4D82AC"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="#192161"
+        android:fontFamily="@font/courier_prime"
+        android:text="--"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTxtPeso" />
+
+    <EditText
+        android:id="@+id/editTxtPeso"
+        android:layout_width="133dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="60kg"
+        android:inputType="number|numberDecimal"
+        app:layout_constraintEnd_toStartOf="@+id/editTxtAltura"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPeso" />
+
+    <EditText
+        android:id="@+id/editTxtAltura"
+        android:layout_width="133dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="160cm"
+        android:inputType="number|numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/editTxtPeso"
+        app:layout_constraintTop_toBottomOf="@+id/txtAltura" />
+
+    <TextView
+        android:id="@+id/txtPeso"
+        android:layout_width="41dp"
+        android:layout_height="21dp"
+        android:layout_marginTop="32dp"
+        android:text="Peso"
+        app:layout_constraintBottom_toTopOf="@+id/editTxtPeso"
+        app:layout_constraintStart_toStartOf="@+id/editTxtPeso"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txtAltura"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:text="Altura"
-        app:layout_constraintStart_toStartOf="@+id/txtPeso"
-        tools:layout_editor_absoluteY="178dp" />
+        app:layout_constraintBottom_toTopOf="@+id/editTxtAltura"
+        app:layout_constraintStart_toStartOf="@+id/editTxtAltura"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvResultadoImc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Peso"
-        app:layout_constraintStart_toStartOf="@+id/txtAltura"
-        tools:layout_editor_absoluteY="178dp" />
-
-    <TextView
-        android:id="@+id/txtResultado"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:text="--"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
-
-    <EditText
-        android:id="@+id/txtAltura"
-        android:layout_width="146dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="16dp"
-        android:ems="10"
-        android:hint=" 45 kg"
-        android:inputType="number"
-        app:layout_constraintEnd_toStartOf="@+id/txtPeso"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="218dp" />
-
-    <EditText
-        android:id="@+id/txtPeso"
-        android:layout_width="146dp"
-        android:layout_height="52dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:hint="168 cm"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/txtAltura"
-        tools:layout_editor_absoluteY="218dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
