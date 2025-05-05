@@ -2,7 +2,9 @@ package com.ifsc.contaclique;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -10,7 +12,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    int i=0;
+    int i = 0;
+
+    String [] nomes = new String[] {"Larissa", "Felipe", "Willian"};
+
+    ListView lv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,21 +24,15 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        TextView tv = findViewById(R.id.textView);
-        tv.setText(getString(R.string.app_name));
+        //Recuperar ListView
+        lv = findViewById(R.id.listView);
 
-        Button b = findViewById(R.id.button);
+        //Adaptador
+        ArrayAdapter<String> a = new ArrayAdapter(
+                this,
+               R.layout.item_lista,
+               R.id.textView,nomes);
 
-        b.setOnClickListener (v -> {//Seus baguio aqui
-        });
-
-        b.setOnClickListener(v -> {});
-        b.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tv.setText(Integer.toString(i));
-                i++;
-            }
-        });
+        lv.setAdapter(a);
     }
 }
