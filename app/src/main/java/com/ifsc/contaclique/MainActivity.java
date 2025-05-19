@@ -1,38 +1,42 @@
 package com.ifsc.contaclique;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
+import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
-
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-
-    int i = 0;
-
-    String [] nomes = new String[] {"Larissa", "Felipe", "Willian"};
+    int i=0;
 
     ListView lv;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        //Recuperar ListView
-        lv = findViewById(R.id.listView);
+        //recupera listview
+        lv= findViewById(R.id.listView);
 
-        //Adaptador
-        ArrayAdapter<String> a = new ArrayAdapter(
-                this,
-               R.layout.item_lista,
-               R.id.textView,nomes);
+        PlanetaDao planetaDao=new PlanetaDao();
 
-        lv.setAdapter(a);
+
+        AdapterPlaneta ap=new AdapterPlaneta(this,
+                R.layout.item_lista,
+                planetaDao.getPlanetas());
+        lv.setAdapter(ap);
+     lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Planeta p = planetaDao.getPlanetas().get(position);
+
+        //Criamos uma intenção para abrir nova atividade
+        Intent i = new Intent(getApplicationContext(),MainActivity2.class);
+
+        i.putExtra("planeta",p);
+        startActivity(i);
+           }
+     });
     }
 }
