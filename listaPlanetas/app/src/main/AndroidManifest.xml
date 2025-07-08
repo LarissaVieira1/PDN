@@ -13,13 +13,7 @@
         android:theme="@style/Theme.ContaClique"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity3"
-            android:exported="false" />
-        <activity
-            android:name=".item_lista"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity2"
+            android:name=".PlanetaActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
