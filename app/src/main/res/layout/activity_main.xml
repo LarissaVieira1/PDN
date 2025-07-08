@@ -8,72 +8,95 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:id="@+id/buttonCalcular"
+        android:layout_width="268dp"
+        android:layout_height="48dp"
         android:backgroundTint="#192161"
         android:fontFamily="@font/courier_prime"
-        android:text="--"
+        android:text="Calcular IMC"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTxtPeso" />
+        app:layout_constraintTop_toBottomOf="@+id/editTxtAltura" />
 
     <EditText
         android:id="@+id/editTxtPeso"
-        android:layout_width="133dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="366dp"
+        android:layout_height="48dp"
         android:ems="10"
-        android:hint="60kg"
+        android:hint="47kg"
         android:inputType="number|numberDecimal"
-        app:layout_constraintEnd_toStartOf="@+id/editTxtAltura"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintBottom_toTopOf="@+id/editTxtAltura"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPeso" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextNome" />
 
     <EditText
         android:id="@+id/editTxtAltura"
-        android:layout_width="133dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="366dp"
+        android:layout_height="48dp"
         android:ems="10"
-        android:hint="160cm"
+        android:hint="169cm"
         android:inputType="number|numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/buttonCalcular"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/editTxtPeso"
-        app:layout_constraintTop_toBottomOf="@+id/txtAltura" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTxtPeso" />
 
     <TextView
         android:id="@+id/txtPeso"
         android:layout_width="41dp"
         android:layout_height="21dp"
-        android:layout_marginTop="32dp"
         android:text="Peso"
         app:layout_constraintBottom_toTopOf="@+id/editTxtPeso"
-        app:layout_constraintStart_toStartOf="@+id/editTxtPeso"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/editTxtPeso" />
 
     <TextView
         android:id="@+id/txtAltura"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:text="Altura"
         app:layout_constraintBottom_toTopOf="@+id/editTxtAltura"
-        app:layout_constraintStart_toStartOf="@+id/editTxtAltura"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/editTxtAltura" />
 
-    <TextView
-        android:id="@+id/tvResultadoImc"
+    <ImageView
+        android:id="@+id/imageView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="--"
+        android:layout_height="250dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonCalcular"
+        app:srcCompat="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:id="@+id/txtCalcularIMC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calcular IMC"
+        app:layout_constraintBottom_toTopOf="@+id/editTextNome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextNome"
+        android:layout_width="366dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="Larissa Vieira de Sousa Lopes"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/editTxtPeso"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCalcularIMC" />
+
+    <TextView
+        android:id="@+id/txtNome1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nome"
+        app:layout_constraintBottom_toTopOf="@+id/editTextNome"
+        app:layout_constraintStart_toStartOf="@+id/editTextNome" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

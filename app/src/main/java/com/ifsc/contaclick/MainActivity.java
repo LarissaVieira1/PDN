@@ -35,11 +35,9 @@ public class MainActivity extends AppCompatActivity {
         edPeso=findViewById((R.id.editTxtPeso));
         edAltura=findViewById(R.id.editTxtAltura);
         edNome=findViewById(R.id.editTextNome);
-        buttonCalcular=findViewById(R.id.button);
+        buttonCalcular=findViewById(R.id.buttonCalcular);
         img=findViewById(R.id.imageView);
         img.setImageResource(R.drawable.perfil);
-
-
 
         buttonCalcular.setOnClickListener(v ->{
             //calcular imc
@@ -49,10 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
             imc = (peso/(altura * altura));
 
-            //formatando número
             DecimalFormat decimalFormat = new DecimalFormat("##.##");
-
-            //    tvResultado.setText(decimalFormat.format(imc));
 
             Intent intent = new Intent(getApplicationContext(), MainActivityB.class);
 
